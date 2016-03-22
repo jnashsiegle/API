@@ -8,6 +8,9 @@ module.exports = function(express){
 		router.get('/status', function(req, res){
 			res.json({ healthy: true});
 		});
+		router.get('/user/:id', function(req, res){
+			res.json({user: {id: req.params.id}});
+		});
 
 
 
