@@ -17,7 +17,7 @@ describe('API', function(){
 		.get('/api/')
 		.set('Accept', 'application/json') //set headers to accept json
 		.expect('Content-Type', /json/)
-		.expect(200, {hello: "world"}, done);
+		.expect(200, {hello: "world. Welcome to my API"}, done);
 	});
 
 	it('/status should return specified healthy:true.', function testHealth(done){
@@ -29,11 +29,17 @@ describe('API', function(){
 	});
 	it('/user/id should return a user obj with id.', function testHealth(done){		
 		var fakeUserID = 374; 
-		request(server)
-		
+		request(server)		
 		.get('/api/user/' + fakeUserID)
 		.set('Accept', 'application/json')
 		.expect('Content-Type', /json/)
 		.expect(200, { user: {id: fakeUserID}} ,done);
+	});
+	it('/ should return specified object.', function testHealth(done){
+		request(server)
+		.get('/api/v1')
+		.set('Accept', 'application/json') //set headers to accept json
+		.expect('Content-Type', /json/)
+		.expect(200, {hello: "world to v1"}, done);
 	});
 });
