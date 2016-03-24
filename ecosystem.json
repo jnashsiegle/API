@@ -8,7 +8,7 @@
     // First application
     {
       name      : "API",
-      script    : "/$HOME/var/www/source/src/server.js",
+      script    : "routes/api.js",
       env: {
         COMMON_VARIABLE: "true"
       },
