@@ -8,7 +8,7 @@
     // First application
     {
       name      : "API",
-      script    : "routes/api.js",
+      script    : "src/server.js",
       env: {
         COMMON_VARIABLE: "true"
       },
@@ -17,11 +17,6 @@
       }
     },
 
-    // Second application
-    {
-      name      : "WEB",
-      script    : "web.js"
-    }
   ],
 
   /**
@@ -34,7 +29,7 @@
       host : "104.236.29.222",
       ref  : "origin/master",
       repo : "git@github.com:jnashsiegle/API.git",
-      path : "/var/www/production",
+      path : "/var/www",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production"
     },
   }
